@@ -1,0 +1,17 @@
+{
+  "name": "kml-conversion",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Converts KML files (specifically those produced by AutoCAD) to GeoJSON, simplifying and cleaning them up in the process.",
+  "scripts": {
+    "convert": "bin/convert",
+    "start": "serve public/"
+  },
+  "author": "Seth Fitzsimmons <sethfitz@amazon.com>",
+  "license": "MIT-0",
+  "dependencies": {
+    "@mapbox/geojson-rewind": "^0.5.2",
+    "@tmcw/togeojson-cli": "^3.0.1",
+    "serve": "^14.2.3"
+  }
+}

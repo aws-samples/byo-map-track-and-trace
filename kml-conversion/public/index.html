@@ -1,0 +1,67 @@
+<!-- Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. -->
+<!-- SPDX-License-Identifier: MIT-0 -->
+<html>
+  <head>
+    <link
+      href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body style="margin: 0">
+    <div id="map" style="height: 100vh" />
+    <script src="https://unpkg.com/maplibre-gl"></script>
+    <script>
+      async function initializeMap() {
+        const region = "us-west-2";
+        const mapName = "open-data-standard-dark";
+        const apiKey = "";
+		const convertedKml = "autocad.json";
+
+        // actually initialize the map
+        const map = new maplibregl.Map({
+          container: "map",
+          center: [-122.3321, 47.6062], // initial map center point
+          zoom: 14, // initial map zoom
+          style: `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`,
+          hash: true,
+        });
+
+        map.addControl(new maplibregl.NavigationControl(), "top-left");
+
+        map.on("load", () => {
+          try {
+            map.addSource("kml", {
+              type: "geojson",
+              data: convertedKml,
+            });
+
+            map.addLayer({
+              id: "kml-polygons",
+              source: "kml",
+              type: "fill",
+              paint: {
+                "fill-color": ["coalesce", ["get", "fill"], "limegreen"],
+                "fill-opacity": ["coalesce", ["get", "fill-opacity"], 0],
+              },
+            });
+
+            map.addLayer({
+              id: "kml-lines",
+              source: "kml",
+              type: "line",
+              paint: {
+                "line-color": ["coalesce", ["get", "stroke"], "limegreen"],
+                "line-opacity": ["coalesce", ["get", "stroke-opacity"], 0],
+              },
+            });
+          } catch (err) {
+            console.warn(err);
+          }
+        });
+      }
+
+      initializeMap();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "ResponseMetadata": {
+    "RequestId": "75fb62c8-75f5-4bca-a78e-640dffcbd873",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "date": "Mon, 29 Jul 2024 23:57:03 GMT",
+      "content-type": "application/json",
+      "content-length": "510",
+      "connection": "keep-alive",
+      "x-amzn-requestid": "75fb62c8-75f5-4bca-a78e-640dffcbd873",
+      "access-control-allow-origin": "*",
+      "x-amz-apigw-id": "bsvcgEZxPHcEUTQ=",
+      "access-control-expose-headers": "age,date,x-amz-apigw-id,x-amz-cf-id,x-amz-cf-pop,x-amzn-errormessage,x-amzn-errortype,x-amzn-requestid,x-amzn-trace-id,x-cache",
+      "x-amzn-trace-id": "Root=1-66a82c4f-54f44e37767dbab21fc8cd9c"
+    },
+    "RetryAttempts": 0
+  },
+  "Entries": [
+    {
+      "GeofenceId": "MyArea",
+      "Geometry": {
+        "Polygon": [
+          [
+            [-6.8924842568777365, 37.17886318897119],
+            [-6.892600504618201, 37.17849711569747],
+            [-6.8919860522785825, 37.17855445259218],
+            [-6.8924842568777365, 37.17886318897119]
+          ]
+        ]
+      },
+      "Status": "ACTIVE",
+      "CreateTime": "2024-07-30T00:02:08.079Z",
+      "UpdateTime": "2024-07-30T00:02:08.079Z"
+    },
+    {
+      "GeofenceId": "MyCircle",
+      "Geometry": {
+        "Circle": { "Center": [-6.89187, 37.17829], "Radius": 10 }
+      },
+      "Status": "ACTIVE",
+      "CreateTime": "2024-07-30T00:02:08.079Z",
+      "UpdateTime": "2024-07-30T00:02:08.079Z"
+    }
+  ]
+}

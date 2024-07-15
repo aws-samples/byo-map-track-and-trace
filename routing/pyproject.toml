@@ -1,0 +1,30 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+
+[tool.poetry]
+name = "routing"
+version = "0.1.0"
+description = ""
+license = "MIT-0"
+authors = ["Seth Fitzsimmons <sethfitz@amazon.com>"]
+readme = "README.md"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+pytest-richer = "^0.1.1"
+pytest-watcher = "^0.4.3"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+geopandas = "^1.0.1"
+osmnx = "^1.9.3"
+pyproj = "^3.6.1"
+boto3 = "^1.35.19"
+click = "^8.1.7"
+
+[tool.poetry.scripts]
+prepare = "routing.prepare:cli"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

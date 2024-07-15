@@ -1,0 +1,26 @@
+{
+  "name": "custom-routing",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT-0",
+  "bin": {
+    "cdk": "bin/cdk.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "cdk": "cdk",
+    "tail": "aws logs tail /aws/lambda/RoutingApi --follow"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "aws-cdk": "^2.148.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.149.0",
+    "constructs": "^10.0.0",
+    "source-map-support": "^0.5.21"
+  }
+}

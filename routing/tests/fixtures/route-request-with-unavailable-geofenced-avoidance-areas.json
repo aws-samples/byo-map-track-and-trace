@@ -1,0 +1,13 @@
+{
+  "Origin": [-6.893, 37.1795],
+  "Destination": [-6.889, 37.1782],
+  "Avoid": {
+    "Areas": [
+      {
+        "Area": {
+          "Arn": "arn:aws:geo:us-west-2::geofence-collection/MyGeofenceCollection#NonexistentArea"
+        }
+      }
+    ]
+}
+}

@@ -1,0 +1,14 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: MIT-0
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	echo "Usage: $0 <KMZ file> [doc.kml]"
+	exit 1
+fi
+
+unzip -p $1 ${2:-doc.kml} | \
+	togeojson | \
+	geojson-rewind | \
+	poetry run clean | \
+	jq -c .
